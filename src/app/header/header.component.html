@@ -3,23 +3,22 @@
   <a class="navbar-brand" href="#">Recipe Book</a>
 
   <!-- Links -->
-  <ul class="navbar-nav">
+  <ul class="navbar-nav float-left">
     <li class="nav-item">
       <a class="nav-link" href="#">Recipes</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Shopping List</a>
     </li>
-
-    <!-- Dropdown -->
-    <li class="dropdown float-right">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Manage
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Save Data</a>
-        <a class="dropdown-item" href="#">Fetch Data</a>
-      </div>
-    </li>
   </ul>
+  <!-- Dropdown -->
+  <div class="dropdown" style="margin-left: 67%">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Manage
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">Save Data</a>
+      <a class="dropdown-item" href="#">Fetch Data</a>
+    </div>
+  </div>
 </nav>

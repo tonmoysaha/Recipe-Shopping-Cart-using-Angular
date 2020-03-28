@@ -1,1 +1,24 @@
-<p>recipes-list works!</p>
+<div class="container">
+  <div>
+    <hr>
+  </div>
+<div class="col-md-10 float-left">
+  <div>
+    <button class="btn btn-success">New Recipe</button>
+  </div>
+    <h6 class="text-muted">Recipe Items</h6>
+    <ul class="list-group">
+      <a href="#"><li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let recipe of recipes">
+        <div class="media-body">
+          <h6 class="pmd-list-title">{{ recipe.name }}</h6>
+          <p class="pmd-list-subtitle">{{ recipe.description}}</p>
+        </div>
+        <div class="image-parent">
+          <img [src]="recipe.imagePath" class="img-fluid" alt="quixote" style="max-height: 50px">
+        </div>
+      </li>
+      </a>
+    </ul>
+</div>
+</div>
+
