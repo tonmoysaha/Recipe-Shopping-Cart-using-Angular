@@ -8,16 +8,7 @@
   </div>
   <h6 class="text-justify" style="margin-top: 3%;font-size: 20px"><b>Recipe Items</b></h6>
     <ul class="list-group">
-      <a href="#"><li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let recipe of recipes">
-        <div class="media-body">
-          <h6 class="pmd-list-title">{{ recipe.name }}</h6>
-          <p class="pmd-list-subtitle">{{ recipe.description}}</p>
-        </div>
-        <div class="image-parent">
-          <img [src]="recipe.imagePath" class="img-fluid" alt="quixote" style="max-height: 50px">
-        </div>
-      </li>
-      </a>
+      <app-recipe-item *ngFor="let recipe of recipes" [recipe]="recipe"></app-recipe-item>
     </ul>
 </div>
 </div>
