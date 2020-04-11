@@ -2,10 +2,14 @@
 <div class="container" *ngIf="loadnavigate == 'Recipe' || loadnavigate == ''">
   <div class="row">
     <div class="col-lg-7">
-      <app-recipes-list></app-recipes-list>
+      <app-recipes-list (recipeWasselected)="selectedRecipe = $event"></app-recipes-list>
     </div>
     <div class="col-lg-4">
-      <app-recipes-details></app-recipes-details>
+      <app-recipes-details *ngIf="selectedRecipe; else infoTexts" [recipeDetails]="selectedRecipe"></app-recipes-details>
+      <ng-template #infoTexts>
+        <p style="margin-top: 8%; font-size: 20px; color: white; background-color: black">Please select an Item from the item list <br>
+        The Information of this Item</p>
+      </ng-template>
     </div>
   </div>
 </div>
