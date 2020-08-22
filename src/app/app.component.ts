@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Recipe} from "./recipes/recipe.model";
+import {IngredientModel} from "./shared/ingredient.model";
 
 @Component({
   selector: 'app-root',
