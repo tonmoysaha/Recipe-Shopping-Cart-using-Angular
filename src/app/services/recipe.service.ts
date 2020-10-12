@@ -4,8 +4,11 @@
 //   providedIn: 'root'
 // })
 import {Recipe} from "../recipes/recipe.model";
+import {EventEmitter} from "@angular/core";
 
 export class RecipeService {
+
+  selectedRecipe = new EventEmitter<Recipe>();
 
   constructor() { }
 

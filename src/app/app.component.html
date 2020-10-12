@@ -2,7 +2,7 @@
 <div class="container" *ngIf="loadnavigate == 'Recipe' || loadnavigate == ''">
   <div class="row">
     <div class="col-lg-7">
-      <app-recipes-list (recipeWasselected)="selectedRecipe = $event"></app-recipes-list>
+      <app-recipes-list></app-recipes-list>
     </div>
     <div class="col-lg-4">
       <app-recipes-details *ngIf="selectedRecipe; else infoTexts" [recipeDetails]="selectedRecipe"></app-recipes-details>
