@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Recipe} from "./recipes/recipe.model";
 import {IngredientModel} from "./shared/ingredient.model";
 
@@ -10,6 +10,7 @@ import {IngredientModel} from "./shared/ingredient.model";
 export class AppComponent {
   selectedRecipe: Recipe;
   loadnavigate = '';
+
   onNavigate(feature: string) {
     this.loadnavigate = feature;
   }
