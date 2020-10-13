@@ -1,17 +1,16 @@
-// import { Injectable } from '@angular/core';
-//
-// @Injectable({
-//   providedIn: 'root'
-// })
+import { Injectable } from '@angular/core';
 import {Recipe} from "../recipes/recipe.model";
 import {EventEmitter} from "@angular/core";
 import {IngredientModel} from "../shared/ingredient.model";
+import {ShoppingListService} from "./shopping-list.service";
+//providedIn: 'root'
 
+@Injectable()
 export class RecipeService {
 
   selectedRecipe = new EventEmitter<Recipe>();
 
-  constructor() { }
+  constructor(private shoppingService: ShoppingListService) { }
 
   recipes: Recipe[] = [
     new Recipe('illish broyani', 'chilli food', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
@@ -24,5 +23,9 @@ export class RecipeService {
 
   getRecipes(){
     return this.recipes.slice();
+  }
+
+  addIngrediantsToShoppingList(ingrediants: IngredientModel[]){
+    this.shoppingService.addIngredients(ingrediants);
   }
 }
