@@ -11,18 +11,12 @@ import {ShoppingListService} from "./services/shopping-list.service";
   providers: [RecipeService]
 })
 export class AppComponent implements OnInit{
-  selectedRecipe: Recipe;
-  loadnavigate = '';
 
-  constructor(private recipeservice: RecipeService){}
+  constructor(){}
 
   onNavigate(feature: string) {
-    this.loadnavigate = feature;
   }
 
   ngOnInit(): void {
-    this.recipeservice.selectedRecipe.subscribe((recipe: Recipe) => {
-      this.selectedRecipe = recipe;
-    } )
   }
 }

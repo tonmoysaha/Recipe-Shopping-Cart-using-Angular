@@ -1,15 +1,21 @@
 <div class="container">
-  <div>
-    <hr>
-  </div>
-<div class="col-md-10 float-left">
+<div class="row">
+  <div class="col-lg-7">
   <div>
     <button class="btn btn-success">New Recipe</button>
   </div>
   <h6 class="text-justify" style="margin-top: 3%;font-size: 20px"><b>Recipe Items</b></h6>
     <ul class="list-group">
-      <app-recipe-item *ngFor="let recipe of recipes" [recipe]="recipe"> </app-recipe-item>
+      <app-recipe-item *ngFor="let recipe of recipes" [recipe]="recipe" (click)="onselect(recipe)"> </app-recipe-item>
     </ul>
-</div>
-</div>
+  </div>
+    <div class="col-lg-4">
+      <app-recipes-details *ngIf="setRecipe; else infoTexts" ></app-recipes-details>
+      <ng-template #infoTexts>
+        <p style="margin-top: 8%; font-size: 20px; color: white; background-color: black">Please select an Item from the item list <br>
+          The Information of this Item</p>
+      </ng-template>
+    </div>
+  </div>
 
+</div>
