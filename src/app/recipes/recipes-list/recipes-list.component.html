@@ -6,7 +6,9 @@
   </div>
   <h6 class="text-justify" style="margin-top: 3%;font-size: 20px"><b>Recipe Items</b></h6>
     <ul class="list-group">
-      <app-recipe-item *ngFor="let recipe of recipes" [recipe]="recipe"> </app-recipe-item>
+      <app-recipe-item *ngFor="let recipe of recipes; index as i"
+                       [recipe]="recipe"
+                       [index]="i"> </app-recipe-item>
     </ul>
   </div>
     <div class="col-lg-4">
