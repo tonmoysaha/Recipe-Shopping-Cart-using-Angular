@@ -10,11 +10,7 @@
     </ul>
   </div>
     <div class="col-lg-4">
-      <app-recipes-details *ngIf="setRecipe; else infoTexts" ></app-recipes-details>
-      <ng-template #infoTexts>
-        <p style="margin-top: 8%; font-size: 20px; color: white; background-color: black">Please select an Item from the item list <br>
-          The Information of this Item</p>
-      </ng-template>
+      <router-outlet></router-outlet>
     </div>
   </div>
 
