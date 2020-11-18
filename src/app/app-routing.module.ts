@@ -5,15 +5,19 @@ import {ShoppingListComponent} from "./shopping-list/shopping-list.component";
 import {StartrecipeComponent} from "./recipes/startrecipe/startrecipe.component";
 import {RecipesDetailsComponent} from "./recipes/recipes-details/recipes-details.component";
 import {HomeComponent} from "./home/home.component";
+import {RecipeEditComponent} from "./recipes/recipe-edit/recipe-edit.component";
 
 
 const routes: Routes = [
   {path: '' , component: HomeComponent},
   {path: 'recipes' , component: RecipesListComponent, children: [
       {path: '', component: StartrecipeComponent},
-      {path: ':id', component: RecipesDetailsComponent}
+      {path: 'new', component: RecipeEditComponent},
+      {path: ':id', component: RecipesDetailsComponent},
+      {path: ':id/edit', component: RecipeEditComponent}
     ]},
-  {path: 'shoppinglists' , component: ShoppingListComponent}
+  {path: 'shoppinglists' , component: ShoppingListComponent},
+  {path: '**' , component: HomeComponent}
 ];
 
 @NgModule({
