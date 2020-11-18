@@ -4,10 +4,11 @@ import {RecipesListComponent} from "./recipes/recipes-list/recipes-list.componen
 import {ShoppingListComponent} from "./shopping-list/shopping-list.component";
 import {StartrecipeComponent} from "./recipes/startrecipe/startrecipe.component";
 import {RecipesDetailsComponent} from "./recipes/recipes-details/recipes-details.component";
+import {HomeComponent} from "./home/home.component";
 
 
 const routes: Routes = [
-  {path: '' , component: RecipesListComponent},
+  {path: '' , component: HomeComponent},
   {path: 'recipes' , component: RecipesListComponent, children: [
       {path: '', component: StartrecipeComponent},
       {path: ':id', component: RecipesDetailsComponent}
