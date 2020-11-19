@@ -14,9 +14,6 @@ export class AppComponent implements OnInit{
 
   constructor(){}
 
-  onNavigate(feature: string) {
-  }
-
   ngOnInit(): void {
   }
 }
