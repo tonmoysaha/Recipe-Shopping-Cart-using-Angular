@@ -23,8 +23,18 @@ export class ShoppingListService {
     return this.ingredients.slice();
   }
 
-  addIngredients(ingrediants: IngredientModel[]){
-    this.ingredients.push(...ingrediants);
+  getIngredient(index: number){
+    return this.ingredients[index];
+  }
+
+  addIngredients(ingredient: IngredientModel[]){
+    this.ingredients.push(...ingredient);
     this.shoppinglistChanged.next(this.ingredients.slice());
   }
+
+  updateIngredient(index: number , ingrediant: IngredientModel){
+    this.ingredients[index] = ingrediant;
+    return this.shoppinglistChanged.next(this.ingredients);
+  }
+
 }
