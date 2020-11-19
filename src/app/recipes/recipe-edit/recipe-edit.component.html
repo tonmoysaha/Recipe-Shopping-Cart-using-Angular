@@ -1,1 +1,42 @@
-<p>recipe-edit works!</p>
+<div class="container" [ngStyle]="{'background-color':'#E6E6FA', 'padding': '10px'}">
+  <div class="image-parent text-center">
+    <img [src]="'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'" class="img-fluid" alt="quixote"
+         style="max-height: 50px">
+    <h2>Recipe Form</h2>
+  </div>
+  <form>
+    <div class="form-group">
+      <label for="name">Recipe Name: </label>
+      <input type="text" class="form-control" placeholder="Enter Name" id="name">
+    </div>
+    <div class="form-group">
+      <label for="imagePath">Image Path:</label>
+      <input type="text" class="form-control" placeholder="Enter Image Url" id="imagePath">
+    </div>
+    <div class="form-group">
+      <img src=""  class="img-fluid" style="max-height: 50px" >
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea type="text" class="form-control" placeholder="Enter Description for the Recipe"
+                id="description" rows="6"></textarea>
+    </div>
+
+    <div class="row" style="margin-top: 4%">
+      <div class="col-md-6 form-group">
+        <input type="text"  class="form-control" name="name">
+      </div>
+      <div class="col-md-3 form-group">
+        <input type="number" class="form-control" name="amount" pattern="^[1-9]+[0-9]*$">
+      </div>
+      <div class="col-md-3 form-group">
+        <button type="button" class="btn btn-danger">X</button>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
+      <button type="button" class="btn btn-danger">Clear</button>
+    </div>
+  </form>
+</div>
