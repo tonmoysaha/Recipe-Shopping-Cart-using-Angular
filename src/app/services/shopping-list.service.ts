@@ -32,9 +32,14 @@ export class ShoppingListService {
     this.shoppinglistChanged.next(this.ingredients.slice());
   }
 
-  updateIngredient(index: number , ingrediant: IngredientModel){
-    this.ingredients[index] = ingrediant;
-    return this.shoppinglistChanged.next(this.ingredients);
+  updateIngredient(index: number , ingredient: IngredientModel){
+    this.ingredients[index] = ingredient;
+    return this.shoppinglistChanged.next(this.ingredients.slice());
   }
 
+  deleteIngredient(index: number){
+     this.ingredients.splice(index, 1);
+     this.shoppinglistChanged.next(this.ingredients.slice());
+
+  }
 }
