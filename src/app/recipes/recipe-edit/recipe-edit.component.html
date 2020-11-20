@@ -4,14 +4,14 @@
          style="max-height: 50px">
     <h2>Recipe Form</h2>
   </div>
-  <form>
+  <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Recipe Name: </label>
-      <input type="text" class="form-control" placeholder="Enter Name" id="name">
+      <input type="text" class="form-control" placeholder="Enter Name" id="name" formControlName="name">
     </div>
     <div class="form-group">
       <label for="imagePath">Image Path:</label>
-      <input type="text" class="form-control" placeholder="Enter Image Url" id="imagePath">
+      <input type="text" class="form-control" placeholder="Enter Image Url" id="imagePath" formControlName="imagePath">
     </div>
     <div class="form-group">
       <img src=""  class="img-fluid" style="max-height: 50px" >
@@ -19,7 +19,7 @@
     <div class="form-group">
       <label for="description">Description:</label>
       <textarea type="text" class="form-control" placeholder="Enter Description for the Recipe"
-                id="description" rows="6"></textarea>
+                id="description" rows="6" formControlName="description"></textarea>
     </div>
 
     <div class="row" style="margin-top: 4%">

@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {ActivatedRoute, Params} from "@angular/router";
 import {RecipeService} from "../../services/recipe.service";
 import {Recipe} from "../recipe.model";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-recipe-edit',
   templateUrl: './recipe-edit.component.html',
   styleUrls: ['./recipe-edit.component.css']
 })
-export class RecipeEditComponent implements OnInit {
+export class RecipeEditComponent implements OnInit, OnDestroy {
 
   recipeForm: FormGroup;
+  private subscription: Subscription;
 
   id: number;
   editMode = false;
@@ -21,9 +23,10 @@ export class RecipeEditComponent implements OnInit {
               private recipeService: RecipeService) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params: Params) => {
+    this.subscription = this.route.params.subscribe((params: Params) => {
       this.id = +params['id'];
       this.editMode = params['id'] != null;
+      this.initForm();
     });
   }
 
@@ -46,4 +49,11 @@ export class RecipeEditComponent implements OnInit {
     });
   }
 
+  onSubmit() {
+    console.log(this.recipeForm);
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 }
