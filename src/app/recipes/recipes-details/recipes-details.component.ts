@@ -28,6 +28,7 @@ export class RecipesDetailsComponent implements OnInit {
 
   onAddToShoppingList() {
     this.recipeService.addIngrediantsToShoppingList(this.recipe.ingrediants);
+    this.router.navigate(['/shoppinglists']);
   }
 
   onEditRecipe() {

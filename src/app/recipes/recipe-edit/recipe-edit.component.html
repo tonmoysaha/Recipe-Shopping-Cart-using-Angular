@@ -11,10 +11,12 @@
     </div>
     <div class="form-group">
       <label for="imagePath">Image Path:</label>
-      <input type="text" class="form-control" placeholder="Enter Image Url" id="imagePath" formControlName="imagePath">
+      <input type="text" class="form-control" placeholder="Enter Image Url" id="imagePath"
+             formControlName="imagePath" #imagePath>
     </div>
     <div class="form-group">
-      <img src=""  class="img-fluid" style="max-height: 50px" >
+      <label for="image">Image Preview:</label><br>
+      <img src="{{ imagePath.value }}"  class="img-fluid" style="max-height: 80px" id="image">
     </div>
     <div class="form-group">
       <label for="description">Description:</label>
@@ -33,7 +35,7 @@
         <input type="number" class="form-control" name="amount" pattern="^[1-9]+[0-9]*$" formControlName="amount">
       </div>
       <div class="col-md-3">
-        <button type="button" class="btn btn-danger">X</button>
+        <button type="button" class="btn btn-danger" (click)="deleteIngrediants(i)">X</button>
       </div>
     </div>
       <hr>
@@ -43,8 +45,8 @@
     </div>
 
     <div class="text-center">
-      <button type="submit" class="btn btn-primary" [disabled]="recipeForm.invalid">Submit</button> &nbsp;
-      <button type="button" class="btn btn-danger" (click)="onResetForm()">Clear</button>
+      <button type="submit" class="btn btn-primary" [disabled]="recipeForm.invalid">{{editMode ? 'Update' : 'Add' }}</button> &nbsp;
+      <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
     </div>
   </form>
 </div>
