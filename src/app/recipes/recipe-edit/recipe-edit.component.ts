@@ -35,6 +35,7 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
     }else {
       this.recipeService.addRecipes(this.recipeForm.value);
     }
+    this.onResetForm();
   }
 
   ngOnDestroy(): void {
@@ -82,5 +83,9 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
           Validators.pattern(/^[1-9]+[0-9]*$/)])
       })
     )
+  }
+
+  onResetForm() {
+    this.recipeForm.reset();
   }
 }

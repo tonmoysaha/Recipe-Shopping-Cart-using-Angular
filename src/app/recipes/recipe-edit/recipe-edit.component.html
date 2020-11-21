@@ -44,7 +44,7 @@
 
     <div class="text-center">
       <button type="submit" class="btn btn-primary" [disabled]="recipeForm.invalid">Submit</button> &nbsp;
-      <button type="button" class="btn btn-danger">Clear</button>
+      <button type="button" class="btn btn-danger" (click)="onResetForm()">Clear</button>
     </div>
   </form>
 </div>
