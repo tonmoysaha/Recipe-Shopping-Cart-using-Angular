@@ -6,3 +6,9 @@
   width: 110%;
   height: 50%;
 }
+
+/*Form Validation*/
+input.ng-invalid.ng-touched ,
+textarea.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
