@@ -22,15 +22,22 @@
                 id="description" rows="6" formControlName="description"></textarea>
     </div>
 
-    <div class="row" style="margin-top: 4%">
-      <div class="col-md-6 form-group">
-        <input type="text"  class="form-control" name="name">
+    <div formArrayName="ingrediants">
+    <div class="row" style="margin-top: 4%"
+    *ngFor="let ingrediant of recipeForm.get('ingrediants')['controls']; index as i"
+    [formGroupName]="i">
+      <div class="col-md-6">
+        <input type="text"  class="form-control" name="name" formControlName="name">
       </div>
-      <div class="col-md-3 form-group">
-        <input type="number" class="form-control" name="amount" pattern="^[1-9]+[0-9]*$">
+      <div class="col-md-3">
+        <input type="number" class="form-control" name="amount" pattern="^[1-9]+[0-9]*$" formControlName="amount">
       </div>
-      <div class="col-md-3 form-group">
+      <div class="col-md-3">
         <button type="button" class="btn btn-danger">X</button>
+      </div>
+    </div>
+      <div [ngStyle]="{'padding-top': '10px'}">
+      <button class="btn btn-success">Add Ingredient</button>
       </div>
     </div>
 
