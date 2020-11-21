@@ -30,7 +30,11 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    console.log(this.recipeForm);
+    if (this.editMode){
+      this.recipeService.updateRecipes(this.id, this.recipeForm.value);
+    }else {
+      this.recipeService.addRecipes(this.recipeForm.value);
+    }
   }
 
   ngOnDestroy(): void {
